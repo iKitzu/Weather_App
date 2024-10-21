@@ -32,29 +32,29 @@
 
     <!-- Botones -->
     <div class="buttons">
-        <button>Today</button>
-        <button>Tomorrow</button>
-        <button>10 Days</button>
-    </div>
+        <button class="active" onclick="setActive(this)">Today</button>
+        <button onclick="setActive(this)">Tomorrow</button>
+        <button onclick="setActive(this)">10 Days</button>
+    </div>    
 
     <!-- Contenido -->
     <main>
         <!-- Primera Sección -->
         <section class="stats">
             <div class="stat">
-                <div class="stat-icon">🌬️</div>
+                <div class="stat-icon"><img class="large-img" src="./assets/img/air.png"></div>
                 <div class="stat-info">Wind: 10 km/h</div>
             </div>
             <div class="stat">
-                <div class="stat-icon">🌧️</div>
+                <div class="stat-icon"><img class="large-img" src="./assets/img/rainy.png"></div>
                 <div class="stat-info">Rain: 20%</div>
             </div>
             <div class="stat">
-                <div class="stat-icon">🌡️</div>
+                <div class="stat-icon"><img class="large-img" src="./assets/img/waves.png"></div>
                 <div class="stat-info">Pressure: 1015 mb</div>
             </div>
             <div class="stat">
-                <div class="stat-icon">☀️</div>
+                <div class="stat-icon"><img class="large-img" src="./assets/img/light_mode.png"></div>
                 <div class="stat-info">UV Index: 5</div>
             </div>
         </section>
@@ -62,75 +62,71 @@
         <!-- Segunda Sección -->
         <section class="hourly-forecast">
             <div class="section-title">
-                <div class="forecast-icon">🕒</div> Hourly Forecast
+                <div class="forecast-icon"><img class="large-img" src="./assets/img/history_toggle_off.png" alt=""></div> Hourly Forecast
             </div>
             <div class="hours">
-                <div class="hour">Now <span>☀️</span> 25°C</div>
-                <div class="hour">10 AM <span>🌤️</span> 23°C</div>
-                <div class="hour">11 AM <span>🌤️</span> 24°C</div>
-                <div class="hour">12 PM <span>☀️</span> 26°C</div>
-                <div class="hour">1 PM <span>☀️</span> 27°C</div>
-                <div class="hour">2 PM <span>☀️</span> 28°C</div>
             </div>
         </section>
 
         <!-- Tercera Sección -->
         <section class="day-forecast">
             <div class="section-title">
-                <div class="forecast-icon">📅</div> Day Forecast
+                <div class="forecast-icon"><img class="large-img" src="./assets/img/calendar_month.png" alt=""></div> Day Forecast
             </div>
             <div class="day-graph">
-                <img src="./assets/img/vaca.jpeg" alt="No tengo ni idea de como implementar la grafica xd">
+                <img src="./assets/img/grafica_insana_xd.png" alt="No tengo ni idea de como implementar la grafica xd">
             </div>
         </section>
 
         <!-- Cuarta Sección -->
         <section class="rain-chance">
             <div class="section-title">
-                <div class="forecast-icon">🌧️</div> Chance of Rain
+                <div class="forecast-icon"><img class="large-img" src="./assets/img/rainy.png" alt=""></div> Chance of Rain
             </div>
             <div class="rain-bar">
                 <div class="time">7 PM</div>
                 <div class="bar-container">
-                    <div class="bar" style="width: 30%;"></div>
+                    <div class="bar" style="width: 27%;"></div>
                 </div>
-                <div class="percentage">30%</div>
+                <div class="percentage">27%</div>
             </div>
             <div class="rain-bar">
                 <div class="time">8 PM</div>
                 <div class="bar-container">
-                    <div class="bar" style="width: 50%;"></div>
+                    <div class="bar" style="width: 44%;"></div>
                 </div>
-                <div class="percentage">50%</div>
+                <div class="percentage">44%</div>
             </div>
             <div class="rain-bar">
                 <div class="time">9 PM</div>
                 <div class="bar-container">
-                    <div class="bar" style="width: 80%;"></div>
+                    <div class="bar" style="width: 56%;"></div>
                 </div>
-                <div class="percentage">80%</div>
+                <div class="percentage">56%</div>
             </div>
             <div class="rain-bar">
                 <div class="time">10 PM</div>
                 <div class="bar-container">
-                    <div class="bar" style="width: 90%;"></div>
+                    <div class="bar" style="width: 88%;"></div>
                 </div>
-                <div class="percentage">90%</div>
+                <div class="percentage">88%</div>
             </div>
         </section>
 
         <!-- Quinta Sección -->
         <section class="sunrise-sunset">
             <div class="sun-info">
-                <div class="sun-icon">🌅</div>
+                <div class="sun-icon"><img class="large-img" src="./assets/img/nights_stay.png"></div>
                 <div class="sun-detail">Sunrise: 6:30 AM</div>
             </div>
             <div class="sun-info">
-                <div class="sun-icon">🌇</div>
+                <div class="sun-icon"><img class="large-img" src="./assets/img/bounding_box.png" alt=""></div>
                 <div class="sun-detail">Sunset: 6:00 PM</div>
             </div>
         </section>
     </main>
 </body>
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/test.js"></script>
 </html>

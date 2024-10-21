@@ -12,7 +12,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--background-1);
+    background-color: #f6edff;
 }
 
 header {
@@ -49,7 +49,7 @@ header {
 }
 
 .temp-value, .weather-icon {
-    font-size: 98px;
+    font-size: 28px;
     font-weight: bold;
 }
 
@@ -64,18 +64,23 @@ header {
 .buttons {
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding-left: 0px;
     position: sticky;
-    top: 0;
+    margin-top: 10px;
 }
 
 .buttons button {
-    background-color: white ;
+    background-color: white;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 20px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button.active {
+    background-color: #e0b6ff;
 }
 
 .stats, .hourly-forecast, .day-forecast, .rain-chance, .sunrise-sunset {
@@ -134,7 +139,7 @@ header {
 }
 
 .bar-container {
-    background-color: var(--card-1);
+    background-color: #D0BCFF;
     width: 70%;
     height: 12px;
     border-radius: 4px;
@@ -165,3 +170,28 @@ header {
 .sun-icon {
     margin-right: 10px;
 }
+
+/**/
+
+.weather-icon img {
+    width: 140px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.wind-speed, .precipitation, .pressure, .uv-index {
+    font-size: 1.4em; /* Ajusta el tamaño según sea necesario */
+}
+
+.large-img {
+    width: 130%; /* Ajusta este valor según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.day-graph img {
+    max-width: 100%; /* Se asegura de que la imagen no exceda el ancho del contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+}
+
+
+/**/
+
