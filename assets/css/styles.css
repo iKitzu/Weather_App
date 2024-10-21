@@ -1,0 +1,167 @@
+:root {
+    --background-1: #F6EDFF;
+    --button-1: #E0B6FF;
+    --button-2: #FFFFFF;
+    --card-1: #D0BCFF;
+    --color-1: #FFFFFF;
+    --color-2: #1E1B1B;
+    --color-3: #494649;
+    --progress-bar-1: #8A20D5;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-1);
+}
+
+header {
+    background-image: url('/assets/img/background.png');
+    background-size: cover;
+    background-position: bottom;
+    padding: 20px;
+    color: var(--color-1);
+    text-align: center;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0 0 40px 40px;
+}
+
+.header-top {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-between;
+}
+
+.header-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.temperature {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.temp-value, .weather-icon {
+    font-size: 98px;
+    font-weight: bold;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.buttons button {
+    background-color: white ;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.stats, .hourly-forecast, .day-forecast, .rain-chance, .sunrise-sunset {
+    padding: 15px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat {
+    background-color: #ebdeff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.stat-icon {
+    margin-right: 10px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.forecast-icon {
+    margin-right: 10px;
+}
+
+.hours {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ebdeff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.hour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rain-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bar-container {
+    background-color: var(--card-1);
+    width: 70%;
+    height: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background-color: var(--progress-bar-1);
+}
+
+.sunrise-sunset {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Para dar espacio entre los dos divs */
+}
+
+.sun-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ebdeff;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1; /* Los divs se distribuyen de manera equitativa */
+}
+
+.sun-icon {
+    margin-right: 10px;
+}

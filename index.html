@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    
+    <link rel="shortcut icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="location">Kharkiv, Ukraine</div>
+            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+        <div class="header-center">
+            <div class="temperature">
+                <span class="temp-value">3°C</span>
+                <span>Feels like -2°</span>
+            </div>
+            <span class="weather-icon">☀️</span>
+        </div>        
+        <div class="header-bottom">
+            <div class="date-time">January 18, 16:14</div>
+            <div class="additional-info">Day 3° <br> Night -1°</div>
+        </div>
+    </header>
+
+    <!-- Botones -->
+    <div class="buttons">
+        <button>Today</button>
+        <button>Tomorrow</button>
+        <button>10 Days</button>
+    </div>
+
+    <!-- Contenido -->
+    <main>
+        <!-- Primera Sección -->
+        <section class="stats">
+            <div class="stat">
+                <div class="stat-icon">🌬️</div>
+                <div class="stat-info">Wind: 10 km/h</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon">🌧️</div>
+                <div class="stat-info">Rain: 20%</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon">🌡️</div>
+                <div class="stat-info">Pressure: 1015 mb</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon">☀️</div>
+                <div class="stat-info">UV Index: 5</div>
+            </div>
+        </section>
+
+        <!-- Segunda Sección -->
+        <section class="hourly-forecast">
+            <div class="section-title">
+                <div class="forecast-icon">🕒</div> Hourly Forecast
+            </div>
+            <div class="hours">
+                <div class="hour">Now <span>☀️</span> 25°C</div>
+                <div class="hour">10 AM <span>🌤️</span> 23°C</div>
+                <div class="hour">11 AM <span>🌤️</span> 24°C</div>
+                <div class="hour">12 PM <span>☀️</span> 26°C</div>
+                <div class="hour">1 PM <span>☀️</span> 27°C</div>
+                <div class="hour">2 PM <span>☀️</span> 28°C</div>
+            </div>
+        </section>
+
+        <!-- Tercera Sección -->
+        <section class="day-forecast">
+            <div class="section-title">
+                <div class="forecast-icon">📅</div> Day Forecast
+            </div>
+            <div class="day-graph">
+                <img src="./assets/img/vaca.jpeg" alt="No tengo ni idea de como implementar la grafica xd">
+            </div>
+        </section>
+
+        <!-- Cuarta Sección -->
+        <section class="rain-chance">
+            <div class="section-title">
+                <div class="forecast-icon">🌧️</div> Chance of Rain
+            </div>
+            <div class="rain-bar">
+                <div class="time">7 PM</div>
+                <div class="bar-container">
+                    <div class="bar" style="width: 30%;"></div>
+                </div>
+                <div class="percentage">30%</div>
+            </div>
+            <div class="rain-bar">
+                <div class="time">8 PM</div>
+                <div class="bar-container">
+                    <div class="bar" style="width: 50%;"></div>
+                </div>
+                <div class="percentage">50%</div>
+            </div>
+            <div class="rain-bar">
+                <div class="time">9 PM</div>
+                <div class="bar-container">
+                    <div class="bar" style="width: 80%;"></div>
+                </div>
+                <div class="percentage">80%</div>
+            </div>
+            <div class="rain-bar">
+                <div class="time">10 PM</div>
+                <div class="bar-container">
+                    <div class="bar" style="width: 90%;"></div>
+                </div>
+                <div class="percentage">90%</div>
+            </div>
+        </section>
+
+        <!-- Quinta Sección -->
+        <section class="sunrise-sunset">
+            <div class="sun-info">
+                <div class="sun-icon">🌅</div>
+                <div class="sun-detail">Sunrise: 6:30 AM</div>
+            </div>
+            <div class="sun-info">
+                <div class="sun-icon">🌇</div>
+                <div class="sun-detail">Sunset: 6:00 PM</div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="./assets/js/script.js"></script>
+</html>
