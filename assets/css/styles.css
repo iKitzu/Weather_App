@@ -13,6 +13,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f6edff;
+    padding-top: 450px; /* Ajustamos para compensar el header fijo y espacio extra para los botones */
 }
 
 header {
@@ -27,6 +28,12 @@ header {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 0 0 40px 40px;
+    position: fixed; /* El header es fijo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Mantener el header en el frente */
+    transition: height 0.3s ease;
 }
 
 .header-top {
@@ -40,6 +47,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    transition: transform 0.3s ease;
 }
 
 .temperature {
@@ -58,15 +66,17 @@ header {
     justify-content: space-between;
     font-size: 20px;
     margin-top: 10px;
+    transition: opacity 0.3s ease;
 }
-
 
 .buttons {
     display: flex;
     justify-content: space-around;
     padding-left: 0px;
     position: sticky;
+    top: 100px; /* Ajustamos el top inicial para que esté debajo del header */
     margin-top: 10px;
+    z-index: 999; /* Aseguramos que los botones queden encima del contenido cuando sea necesario */
 }
 
 .buttons button {
@@ -82,6 +92,8 @@ header {
 .buttons button.active {
     background-color: #e0b6ff;
 }
+
+
 
 .stats, .hourly-forecast, .day-forecast, .rain-chance, .sunrise-sunset {
     padding: 15px;
