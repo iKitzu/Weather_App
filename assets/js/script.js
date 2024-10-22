@@ -1,6 +1,6 @@
-const ciudad = "Giron"; // 🏙️ Cambia el nombre de la ciudad aquí
+const ciudad = "zapatoca"; // 🏙️ Cambia el nombre de la ciudad aquí
 const apiKey = "aab246b2ae19426f95b121358242110"; // 🔑 Clave de API para el servicio del clima
-const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&lang=es&days=10`; // 🌐 URL de la API para obtener el pronóstico de 10 días
+const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&lang=en&days=10`; // 🌐 URL de la API para obtener el pronóstico de 10 días
 
 // 📡 Función asíncrona para actualizar el DOM con los datos del clima
 async function fetchWeather() {
