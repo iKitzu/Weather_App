@@ -200,10 +200,11 @@ header {
     margin-right: 10px;
 }
 
-/**/
+/* Adiciones Pequeñas para estilizar la pagina ;) */
 
 .weather-icon img {
-    width: 140px; /* Ajusta el tamaño según tus necesidades */
+    margin-top: 20px;
+    width: 120px; /* Ajusta el tamaño según tus necesidades */
     height: auto; /* Mantiene la proporción de la imagen */
 }
 
@@ -221,6 +222,14 @@ header {
     height: auto;    /* Mantiene la proporción de la imagen */
 }
 
-
-/**/
-
+/* Añadir un spinner o animación de texto */
+.loading {
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  
