@@ -7,7 +7,7 @@
     
     <link rel="shortcut icon" href="./assets/img/logo.png">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -20,15 +20,18 @@
         <div class="header-center">
             <div class="temperature">
                 <span class="temp-value">Gracias API por...</span> <!-- Temperatura dinámica -->
-                <span class="feels-like">Y tambien por...</span> <!-- Sensación térmica dinámica -->
+                <span class="feels-like">Y también por...</span> <!-- Sensación térmica dinámica -->
             </div>
-            <span class="weather-icon"></span> <!-- Ícono del clima dinámico -->
-        </div>        
+            <div class="weather-icon-container"> <!-- Agrupador de ícono y descripción -->
+                <span class="weather-icon"></span> <!-- Ícono del clima dinámico -->
+                <span class="weather-description"></span> <!-- Descripción del clima -->
+            </div>
+        </div>              
         <div class="header-bottom">
             <div class="date-time">Y no olvidemos...</div> <!-- Fecha y hora dinámica -->
             <div class="additional-info">Cargando...</div> <!-- Temperatura día y noche dinámica -->
         </div>
-    </header>    
+    </header>
 
     <!-- Botones -->
     <div class="buttons">
@@ -57,7 +60,7 @@
                 <div class="stat-icon"><img class="large-img" src="./assets/img/light_mode.png"></div>
                 <div class="stat-info">Cargando...</div> <!-- Información dinámica de índice UV -->
             </div>
-        </section>
+        </section>        
 
         <!-- Segunda Sección -->
         <section class="hourly-forecast">

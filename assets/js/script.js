@@ -1,4 +1,4 @@
-const ciudad = "Cucuta"; // 🏙️ Cambia el nombre de la ciudad aquí
+const ciudad = "Giron"; // 🏙️ Cambia el nombre de la ciudad aquí
 const apiKey = "aab246b2ae19426f95b121358242110"; // 🔑 Clave de API para el servicio del clima
 const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&lang=es&days=1`; // 🌐 URL de la API para obtener el pronóstico
 
@@ -28,7 +28,7 @@ async function fetchWeather() {
     const sunrise = data.forecast.forecastday[0].astro.sunrise; // 🌄 Salida del sol
     const sunset = data.forecast.forecastday[0].astro.sunset; // 🌇 Puesta del sol
 
-    // 📅 Formatear fecha en estilo "January 18, 16:14" // Como en el Figna
+    // 📅 Formatear fecha en estilo "January 18, 16:14"
     const dateOptions = { 
       month: 'long', 
       day: 'numeric' 
@@ -46,7 +46,8 @@ async function fetchWeather() {
     document.querySelector('.location').textContent = `${locationName}`; // 🌍 Ubicación
     document.querySelector('.temp-value').textContent = `${temp}°C`; // 🌡️ Temperatura
     document.querySelector('.temperature span:nth-child(2)').textContent = `Feels like ${feelsLike}°`; // 🌡️ Sensación térmica
-    document.querySelector('.weather-icon').innerHTML = `<img src="${iconUrl}" alt="${conditionText}">`; // 🌥️ Icono del clima
+    document.querySelector('.weather-icon').innerHTML = `<img src="${iconUrl}" alt="${conditionText}">`; // 🌥️ Ícono del clima
+    document.querySelector('.weather-description').textContent = conditionText; // 🌤️ Descripción del clima
     document.querySelector('.date-time').textContent = formattedDateTime; // 🕒 Fecha y hora
     document.querySelector('.additional-info').innerHTML = `Day ${maxTempDay}° <br> Night ${minTempNight}°`; // ☀️ Mínima y máxima
 
@@ -57,26 +58,33 @@ async function fetchWeather() {
     document.querySelectorAll('.stats .stat')[3].querySelector('.stat-info').innerHTML = `UV Index: <br><span class="uv-index">${uvIndex}</span>`; // ☀️ Índice UV
 
     // ⏳ Actualizar pronóstico por horas
-    const hourlyForecast = data.forecast.forecastday[0].hour.slice(0, 6); // 🕒 Obtener las primeras 6 horas de pronóstico
+    const hourlyForecast = data.forecast.forecastday[0].hour; // Obtén el pronóstico por horas completo
+    const currentHour = new Date().getHours(); // Obtén la hora actual
+
+    // Filtra las horas a partir de la hora actual y obtén las próximas 5
+    const upcomingHours = hourlyForecast.filter(hour => {
+      const hourTime = new Date(hour.time).getHours();
+      return hourTime >= currentHour;
+    }).slice(1, 6);
+
     const hoursContainer = document.querySelector('.hours');
-    hoursContainer.innerHTML = ''; // 🗑️ Limpiar contenido anterior
+    hoursContainer.innerHTML = ''; // Limpiar contenido anterior
 
-    hourlyForecast.forEach((hour) => {
-      const hourTime = new Date(hour.time).toLocaleTimeString('en-US', { hour: 'numeric', hour12: true }); // ⏰ Formato de hora
-      const hourTemp = hour.temp_c; // 🌡️ Temperatura por hora
-      const hourIcon = hour.condition.icon; // 🌤️ Icono por hora
-      const hourCondition = hour.condition.text; // 📋 Descripción del clima por hora
+    upcomingHours.forEach((hour) => {
+      const hourTime = new Date(hour.time).toLocaleTimeString('es-ES', { hour: 'numeric', hour12: true }); // Formato de hora
+      const hourTemp = hour.temp_c; // Temperatura por hora
+      const hourIcon = hour.condition.icon; // Icono por hora
+      const hourCondition = hour.condition.text; // Descripción del clima por hora
 
-      // 📦 Crear y añadir el elemento de la hora
       const hourElement = document.createElement('div');
       hourElement.classList.add('hour');
-      hourElement.innerHTML = `${hourTime} <span><img src="${hourIcon}" alt="${hourCondition}"></span> ${hourTemp}°C`; // 🕒 Elemento de hora
-      hoursContainer.appendChild(hourElement); // ➕ Añadir al contenedor
+      hourElement.innerHTML = `${hourTime} <span><img src="${hourIcon}" alt="${hourCondition}"></span> ${hourTemp}°C`;
+      hoursContainer.appendChild(hourElement); // Añadir al contenedor
     });
 
     // 🌅 Actualizar sección de salida y puesta del sol
-    document.querySelector('.sunrise-sunset .sun-info:nth-child(1) .sun-detail').textContent = `Sunrise: ${sunrise}`; // 🌄 Información de salida del sol
-    document.querySelector('.sunrise-sunset .sun-info:nth-child(2) .sun-detail').textContent = `Sunset: ${sunset}`; // 🌇 Información de puesta del sol
+    document.querySelector('.sunrise-sunset .sun-info:nth-child(1) .sun-detail').textContent = `Sunrise: ${sunrise}`; // 🌄 Salida del sol
+    document.querySelector('.sunrise-sunset .sun-info:nth-child(2) .sun-detail').textContent = `Sunset: ${sunset}`; // 🌇 Puesta del sol
 
   } catch (error) {
     console.error('🚨 Error fetching weather data:', error); // ⚠️ Manejo de errores
