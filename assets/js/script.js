@@ -1,4 +1,4 @@
-const ciudad = "Florida"; // Cambia el nombre de la ciudad aquí
+const ciudad = "Floridablanca"; // Cambia el nombre de la ciudad aquí
 const apiKey = "aab246b2ae19426f95b121358242110";
 const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&lang=es&days=1`; // Cambiado a forecast.json para obtener el pronóstico por horas
 

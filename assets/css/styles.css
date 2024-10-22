@@ -9,11 +9,12 @@
     --progress-bar-1: #8A20D5;
 }
 
+/* General body settings */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f6edff;
-    padding-top: 450px; /* Ajustamos para compensar el header fijo y espacio extra para los botones */
+    padding-top: 450px; /* Ajustamos para compensar el header fijo */
 }
 
 header {
@@ -21,14 +22,14 @@ header {
     background-size: cover;
     background-position: bottom;
     padding: 20px;
-    color: var(--color-1);
+    color: white;
     text-align: center;
     height: 390px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 0 0 40px 40px;
-    position: fixed; /* El header es fijo */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -73,10 +74,9 @@ header {
     display: flex;
     justify-content: space-around;
     padding-left: 0px;
-    position: sticky;
-    top: 100px; /* Ajustamos el top inicial para que esté debajo del header */
     margin-top: 10px;
-    z-index: 999; /* Aseguramos que los botones queden encima del contenido cuando sea necesario */
+    z-index: 1100; /* Aseguramos que los botones queden encima del contenido */
+    transition: top 0.3s ease, transform 0.3s ease; /* Suavizar el movimiento */
 }
 
 .buttons button {
@@ -93,9 +93,7 @@ header {
     background-color: #e0b6ff;
 }
 
-
-
-.stats, .hourly-forecast, .day-forecast, .rain-chance, .sunrise-sunset {
+.stats, .hourly-forecast, .day-forecast, .rain-chance, .sunrise-sunset, .days {
     padding: 15px;
 }
 
@@ -116,6 +114,25 @@ header {
 .stat-icon {
     margin-right: 10px;
 }
+
+.days {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.day {
+    background-color: #ebdeff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+/* .stat-icon {
+    margin-right: 10px;
+}
+ */
 
 .section-title {
     font-size: 18px;

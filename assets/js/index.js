@@ -6,4 +6,3 @@ function setActive(button) {
     // Agregar la clase 'active' al botón que fue clickeado
     button.classList.add('active');
 }
-
