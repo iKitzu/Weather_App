@@ -120,6 +120,7 @@ header {
 }
 
 .stats {
+    margin-top: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -283,3 +284,65 @@ header {
     100% { opacity: 0.5; }
   }
   
+
+/**/
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.3s ease-in;
+}
+
+/**/
+
+#ten-days-container {
+    margin: 0 auto; /* Centra el contenedor y establece el margen */
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* Espaciado entre los días */
+}
+
+.day-forecast {
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.forecast-left {
+    text-align: left; /* Alinea a la izquierda */
+}
+
+.forecast-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre las temperaturas y el ícono */
+    text-align: right; /* Alinea a la derecha */
+}
+
+.icono-clima img {
+    width: 80px; /* Tamaño del icono del clima */
+    height: auto;
+}
+
+.temp-container {
+    display: flex;
+    flex-direction: column; /* Coloca la temperatura máxima y mínima una debajo de la otra */
+    align-items: flex-end; /* Alinea a la derecha */
+}
+
+.divider {
+    width: 1px; /* Ancho de la línea vertical */
+    background-color: #000000; /* Color de la línea */
+    height: 40px; /* Altura de la línea, ajusta según sea necesario */
+}

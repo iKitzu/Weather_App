@@ -1,6 +1,6 @@
 const ciudad = "Giron"; // 🏙️ Cambia el nombre de la ciudad aquí
 const apiKey = "aab246b2ae19426f95b121358242110"; // 🔑 Clave de API para el servicio del clima
-const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&lang=es&days=1`; // 🌐 URL de la API para obtener el pronóstico
+const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&lang=es&days=10`; // 🌐 URL de la API para obtener el pronóstico de 10 días
 
 // 📡 Función asíncrona para actualizar el DOM con los datos del clima
 async function fetchWeather() {
@@ -85,6 +85,43 @@ async function fetchWeather() {
     // 🌅 Actualizar sección de salida y puesta del sol
     document.querySelector('.sunrise-sunset .sun-info:nth-child(1) .sun-detail').textContent = `Sunrise: ${sunrise}`; // 🌄 Salida del sol
     document.querySelector('.sunrise-sunset .sun-info:nth-child(2) .sun-detail').textContent = `Sunset: ${sunset}`; // 🌇 Puesta del sol
+
+    // 🗓️ Actualizar pronóstico para los próximos 10 días
+    const tenDaysContainer = document.getElementById('ten-days-container');
+    tenDaysContainer.innerHTML = ''; // Limpiar cualquier contenido anterior
+
+    data.forecast.forecastday.forEach((day) => {
+      const date = new Date(day.date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }); // Cambié a en-US para el formato deseado
+      const conditionText = day.day.condition.text; // Descripción del clima
+      const maxTemp = day.day.maxtemp_c; // 🌡️ Temperatura máxima
+      const minTemp = day.day.mintemp_c; // 🌡️ Temperatura mínima
+      const iconUrl = day.day.condition.icon; // 🌤️ Icono del clima
+  
+      // Crear un nuevo contenedor para el día
+      const dayContainer = document.createElement('div');
+      dayContainer.classList.add('day-forecast');
+  
+      // Rellenar con la información del día, dividiendo el contenido en dos columnas
+      dayContainer.innerHTML = `
+          <div class="forecast-left">
+              <div class="section-title">${date}</div>
+              <span>${conditionText}</span>
+          </div>
+          <div class="forecast-right">
+              <div class="temp-container">
+                  <span class="max-temp">${maxTemp}°</span>
+                  <span class="min-temp">${minTemp}°</span>
+              </div>
+              <div class="divider"></div> <!-- Línea vertical -->
+              <div class="icono-clima"><img src="${iconUrl}" alt="${conditionText}"></div>
+          </div>
+      `;
+  
+      // Añadir el contenedor del día al contenedor principal
+      tenDaysContainer.appendChild(dayContainer);
+  });
+  
+
 
   } catch (error) {
     console.error('🚨 Error fetching weather data:', error); // ⚠️ Manejo de errores
