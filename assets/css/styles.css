@@ -105,7 +105,7 @@ header {
     background-color: white;
     border: none;
     border-radius: 10px;
-    padding: 9px 25px;
+    padding: 14px 25px;
     font-size: 17px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -253,8 +253,8 @@ header {
 /* Adiciones Pequeñas para estilizar la pagina ;) */
 
 .weather-icon img {
-    margin-top: 20px;
-    width: 120px;
+    margin-top: 25px;
+    width: 118px;
     height: auto;
 }
 
@@ -311,7 +311,7 @@ header {
     gap: 0px; /* Espaciado entre los días */
 }
 
-.day-forecast {
+.dayly-forecast {
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
@@ -345,4 +345,29 @@ header {
     width: 1px; /* Ancho de la línea vertical */
     background-color: #000000; /* Color de la línea */
     height: 40px; /* Altura de la línea, ajusta según sea necesario */
+}
+
+/* Estilos para el h2 como contenedor */
+.container-title {
+    background-color: var(--button-1); /* Cambia esto por el color que desees */
+    color: var(--color-2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0; /* Eliminar margen para que quede centrado */
+}
+
+/* Estilos para la imagen */
+.responsive-image {
+    width: 100%; /* Asegura que la imagen no se salga de la pantalla */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacio debajo de la imagen */
+    margin-top: 10px; /* Espacio entre el título y la imagen */
+    border-radius: 20px;
+}
+
+/* Estilos adicionales para la sección */
+#tomorrow-container {
+    padding: 20px; /* Espaciado interno para la sección */
+    text-align: center; /* Centrar el contenido */
 }

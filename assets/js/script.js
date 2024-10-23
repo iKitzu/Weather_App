@@ -1,4 +1,4 @@
-const ciudad = "zapatoca"; // 🏙️ Cambia el nombre de la ciudad aquí
+const ciudad = "Giron"; // 🏙️ Cambia el nombre de la ciudad aquí
 const apiKey = "aab246b2ae19426f95b121358242110"; // 🔑 Clave de API para el servicio del clima
 const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${ciudad}&lang=en&days=10`; // 🌐 URL de la API para obtener el pronóstico de 10 días
 
@@ -52,10 +52,10 @@ async function fetchWeather() {
     document.querySelector('.additional-info').innerHTML = `Day ${maxTempDay}° <br> Night ${minTempNight}°`; // ☀️ Mínima y máxima
 
     // 📊 Actualizar sección de estadísticas
-    document.querySelectorAll('.stats .stat')[0].querySelector('.stat-info').innerHTML = `Wind: <br><span class="wind-speed">${windSpeed} km/h</span>`; // 💨 Viento
-    document.querySelectorAll('.stats .stat')[1].querySelector('.stat-info').innerHTML = `Rain: <br><span class="precipitation">${precipitation}%</span>`; // 🌧️ Lluvia
-    document.querySelectorAll('.stats .stat')[2].querySelector('.stat-info').innerHTML = `Pressure: <br><span class="pressure">${pressure} mb</span>`; // ⚖️ Presión
-    document.querySelectorAll('.stats .stat')[3].querySelector('.stat-info').innerHTML = `UV Index: <br><span class="uv-index">${uvIndex}</span>`; // ☀️ Índice UV
+    document.querySelectorAll('.stats .stat')[0].querySelector('.stat-info').innerHTML = `Wind speed <br><span class="wind-speed">${windSpeed} km/h</span>`; // 💨 Viento
+    document.querySelectorAll('.stats .stat')[1].querySelector('.stat-info').innerHTML = `Rain chance <br><span class="precipitation">${precipitation}%</span>`; // 🌧️ Lluvia
+    document.querySelectorAll('.stats .stat')[2].querySelector('.stat-info').innerHTML = `Pressure <br><span class="pressure">${pressure} mb</span>`; // ⚖️ Presión
+    document.querySelectorAll('.stats .stat')[3].querySelector('.stat-info').innerHTML = `UV Index <br><span class="uv-index">${uvIndex}</span>`; // ☀️ Índice UV
 
     // ⏳ Actualizar pronóstico por horas
     const hourlyForecast = data.forecast.forecastday[0].hour; // Obtén el pronóstico por horas completo
@@ -99,7 +99,7 @@ async function fetchWeather() {
   
       // Crear un nuevo contenedor para el día
       const dayContainer = document.createElement('div');
-      dayContainer.classList.add('day-forecast');
+      dayContainer.classList.add('dayly-forecast');
   
       // Rellenar con la información del día, dividiendo el contenido en dos columnas
       dayContainer.innerHTML = `
